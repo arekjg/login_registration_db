@@ -8,14 +8,14 @@ void main(array<String^>^ args)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	restaurantcppdb::LoginForm loginForm;
+	loginregistrationdb::LoginForm loginForm;
 
 	loginForm.ShowDialog();
 	User^ user = loginForm.user;
 
 	if (user != nullptr)
 	{
-		restaurantcppdb::MainForm mainForm(user);
+		loginregistrationdb::MainForm mainForm(user);
 		Application::Run(% mainForm);
 
 	}

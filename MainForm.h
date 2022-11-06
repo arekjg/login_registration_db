@@ -1,7 +1,7 @@
 #pragma once
 #include "User.h"
 
-namespace restaurantcppdb {
+namespace loginregistrationdb {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -66,7 +66,7 @@ namespace restaurantcppdb {
 				static_cast<System::Byte>(238)));
 			this->label1->Location = System::Drawing::Point(12, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(738, 53);
+			this->label1->Size = System::Drawing::Size(560, 53);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Welcome to Dashboard";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -82,11 +82,11 @@ namespace restaurantcppdb {
 			this->lbUserInfo->Text = L"label1";
 			this->lbUserInfo->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// MyForm
+			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(762, 473);
+			this->ClientSize = System::Drawing::Size(577, 370);
 			this->Controls->Add(this->lbUserInfo);
 			this->Controls->Add(this->label1);
 			this->Name = L"MainForm";
