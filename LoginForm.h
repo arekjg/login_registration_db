@@ -1,5 +1,6 @@
 #pragma once
 #include "User.h"
+#include "MainForm.h"
 
 namespace loginregistrationdb {
 
@@ -76,7 +77,7 @@ namespace loginregistrationdb {
 				static_cast<System::Byte>(238)));
 			this->label1->Location = System::Drawing::Point(12, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(556, 76);
+			this->label1->Size = System::Drawing::Size(556, 57);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Login";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -85,7 +86,7 @@ namespace loginregistrationdb {
 			// 
 			this->label2->Font = (gcnew System::Drawing::Font(L"Arial", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label2->Location = System::Drawing::Point(12, 119);
+			this->label2->Location = System::Drawing::Point(24, 72);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(138, 52);
 			this->label2->TabIndex = 1;
@@ -94,16 +95,18 @@ namespace loginregistrationdb {
 			// 
 			// tbEmail
 			// 
-			this->tbEmail->Location = System::Drawing::Point(156, 131);
+			this->tbEmail->Font = (gcnew System::Drawing::Font(L"Arial", 17, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tbEmail->Location = System::Drawing::Point(168, 84);
 			this->tbEmail->Name = L"tbEmail";
-			this->tbEmail->Size = System::Drawing::Size(400, 30);
-			this->tbEmail->TabIndex = 2;
+			this->tbEmail->Size = System::Drawing::Size(400, 34);
+			this->tbEmail->TabIndex = 1;
 			// 
 			// label3
 			// 
 			this->label3->Font = (gcnew System::Drawing::Font(L"Arial", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label3->Location = System::Drawing::Point(12, 196);
+			this->label3->Location = System::Drawing::Point(24, 149);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(138, 52);
 			this->label3->TabIndex = 1;
@@ -112,16 +115,18 @@ namespace loginregistrationdb {
 			// 
 			// tbPassword
 			// 
-			this->tbPassword->Location = System::Drawing::Point(156, 208);
+			this->tbPassword->Font = (gcnew System::Drawing::Font(L"Arial", 17, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tbPassword->Location = System::Drawing::Point(168, 161);
 			this->tbPassword->Name = L"tbPassword";
 			this->tbPassword->PasswordChar = '*';
-			this->tbPassword->Size = System::Drawing::Size(400, 30);
+			this->tbPassword->Size = System::Drawing::Size(400, 34);
 			this->tbPassword->TabIndex = 2;
 			// 
 			// btnOK
 			// 
 			this->btnOK->Font = (gcnew System::Drawing::Font(L"Arial", 18));
-			this->btnOK->Location = System::Drawing::Point(156, 290);
+			this->btnOK->Location = System::Drawing::Point(168, 243);
 			this->btnOK->Name = L"btnOK";
 			this->btnOK->Size = System::Drawing::Size(189, 44);
 			this->btnOK->TabIndex = 3;
@@ -132,10 +137,10 @@ namespace loginregistrationdb {
 			// btnCancel
 			// 
 			this->btnCancel->Font = (gcnew System::Drawing::Font(L"Arial", 18));
-			this->btnCancel->Location = System::Drawing::Point(367, 290);
+			this->btnCancel->Location = System::Drawing::Point(379, 243);
 			this->btnCancel->Name = L"btnCancel";
 			this->btnCancel->Size = System::Drawing::Size(189, 44);
-			this->btnCancel->TabIndex = 3;
+			this->btnCancel->TabIndex = 4;
 			this->btnCancel->Text = L"Cancel";
 			this->btnCancel->UseVisualStyleBackColor = true;
 			this->btnCancel->Click += gcnew System::EventHandler(this, &LoginForm::btnCancel_Click);
@@ -145,7 +150,7 @@ namespace loginregistrationdb {
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 24);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(580, 370);
+			this->ClientSize = System::Drawing::Size(580, 305);
 			this->Controls->Add(this->btnCancel);
 			this->Controls->Add(this->btnOK);
 			this->Controls->Add(this->tbPassword);
@@ -157,7 +162,7 @@ namespace loginregistrationdb {
 				static_cast<System::Byte>(0)));
 			this->Margin = System::Windows::Forms::Padding(6);
 			this->Name = L"LoginForm";
-			this->Text = L"Login Form";
+			this->Text = L"Login";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -165,6 +170,7 @@ namespace loginregistrationdb {
 #pragma endregion
 	private: System::Void btnCancel_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		MessageBox::Show("Authentication Canceled", "Program.cpp", MessageBoxButtons::OK);
 		this->Close();
 	}
 
@@ -202,7 +208,13 @@ namespace loginregistrationdb {
 				user->phone = reader->GetString(3);
 				user->address = reader->GetString(4);
 				user->password = reader->GetString(5);
+				this->Hide();
+
+				MainForm^ mainForm = gcnew MainForm(user);
+				mainForm->Show();
+
 				this->Close();
+
 			}
 			else
 			{

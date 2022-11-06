@@ -95,7 +95,7 @@ namespace loginregistrationdb {
 				static_cast<System::Byte>(238)));
 			this->label1->Location = System::Drawing::Point(12, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(544, 76);
+			this->label1->Size = System::Drawing::Size(544, 57);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Register";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -104,7 +104,7 @@ namespace loginregistrationdb {
 			// 
 			this->label2->Font = (gcnew System::Drawing::Font(L"Arial", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label2->Location = System::Drawing::Point(12, 119);
+			this->label2->Location = System::Drawing::Point(12, 80);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(138, 52);
 			this->label2->TabIndex = 1;
@@ -113,16 +113,18 @@ namespace loginregistrationdb {
 			// 
 			// tbEmail
 			// 
-			this->tbEmail->Location = System::Drawing::Point(156, 131);
+			this->tbEmail->Font = (gcnew System::Drawing::Font(L"Arial", 17, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tbEmail->Location = System::Drawing::Point(156, 92);
 			this->tbEmail->Name = L"tbEmail";
-			this->tbEmail->Size = System::Drawing::Size(400, 30);
-			this->tbEmail->TabIndex = 2;
+			this->tbEmail->Size = System::Drawing::Size(400, 34);
+			this->tbEmail->TabIndex = 1;
 			// 
 			// label3
 			// 
 			this->label3->Font = (gcnew System::Drawing::Font(L"Arial", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label3->Location = System::Drawing::Point(13, 173);
+			this->label3->Location = System::Drawing::Point(13, 134);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(138, 52);
 			this->label3->TabIndex = 1;
@@ -131,19 +133,21 @@ namespace loginregistrationdb {
 			// 
 			// tbPassword
 			// 
-			this->tbPassword->Location = System::Drawing::Point(156, 185);
+			this->tbPassword->Font = (gcnew System::Drawing::Font(L"Arial", 17, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tbPassword->Location = System::Drawing::Point(156, 146);
 			this->tbPassword->Name = L"tbPassword";
 			this->tbPassword->PasswordChar = '*';
-			this->tbPassword->Size = System::Drawing::Size(400, 30);
+			this->tbPassword->Size = System::Drawing::Size(400, 34);
 			this->tbPassword->TabIndex = 2;
 			// 
 			// btnOK
 			// 
 			this->btnOK->Font = (gcnew System::Drawing::Font(L"Arial", 18));
-			this->btnOK->Location = System::Drawing::Point(156, 471);
+			this->btnOK->Location = System::Drawing::Point(156, 432);
 			this->btnOK->Name = L"btnOK";
 			this->btnOK->Size = System::Drawing::Size(189, 44);
-			this->btnOK->TabIndex = 3;
+			this->btnOK->TabIndex = 7;
 			this->btnOK->Text = L"OK";
 			this->btnOK->UseVisualStyleBackColor = true;
 			this->btnOK->Click += gcnew System::EventHandler(this, &RegistrationForm::btnOK_Click);
@@ -151,10 +155,10 @@ namespace loginregistrationdb {
 			// btnCancel
 			// 
 			this->btnCancel->Font = (gcnew System::Drawing::Font(L"Arial", 18));
-			this->btnCancel->Location = System::Drawing::Point(367, 471);
+			this->btnCancel->Location = System::Drawing::Point(367, 432);
 			this->btnCancel->Name = L"btnCancel";
 			this->btnCancel->Size = System::Drawing::Size(189, 44);
-			this->btnCancel->TabIndex = 3;
+			this->btnCancel->TabIndex = 8;
 			this->btnCancel->Text = L"Cancel";
 			this->btnCancel->UseVisualStyleBackColor = true;
 			this->btnCancel->Click += gcnew System::EventHandler(this, &RegistrationForm::btnCancel_Click);
@@ -162,7 +166,7 @@ namespace loginregistrationdb {
 			// label4
 			// 
 			this->label4->Font = (gcnew System::Drawing::Font(L"Arial", 14));
-			this->label4->Location = System::Drawing::Point(13, 228);
+			this->label4->Location = System::Drawing::Point(13, 189);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(138, 52);
 			this->label4->TabIndex = 4;
@@ -171,24 +175,28 @@ namespace loginregistrationdb {
 			// 
 			// tbPasswordConfirm
 			// 
-			this->tbPasswordConfirm->Location = System::Drawing::Point(156, 240);
+			this->tbPasswordConfirm->Font = (gcnew System::Drawing::Font(L"Arial", 17, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tbPasswordConfirm->Location = System::Drawing::Point(156, 201);
 			this->tbPasswordConfirm->Name = L"tbPasswordConfirm";
 			this->tbPasswordConfirm->PasswordChar = '*';
-			this->tbPasswordConfirm->Size = System::Drawing::Size(400, 30);
-			this->tbPasswordConfirm->TabIndex = 5;
+			this->tbPasswordConfirm->Size = System::Drawing::Size(400, 34);
+			this->tbPasswordConfirm->TabIndex = 3;
 			// 
 			// tbName
 			// 
-			this->tbName->Location = System::Drawing::Point(156, 295);
+			this->tbName->Font = (gcnew System::Drawing::Font(L"Arial", 17, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tbName->Location = System::Drawing::Point(156, 256);
 			this->tbName->Name = L"tbName";
-			this->tbName->Size = System::Drawing::Size(400, 30);
-			this->tbName->TabIndex = 6;
+			this->tbName->Size = System::Drawing::Size(400, 34);
+			this->tbName->TabIndex = 4;
 			// 
 			// label5
 			// 
 			this->label5->Font = (gcnew System::Drawing::Font(L"Arial", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label5->Location = System::Drawing::Point(12, 283);
+			this->label5->Location = System::Drawing::Point(12, 244);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(138, 52);
 			this->label5->TabIndex = 7;
@@ -197,23 +205,27 @@ namespace loginregistrationdb {
 			// 
 			// tbPhone
 			// 
-			this->tbPhone->Location = System::Drawing::Point(156, 350);
+			this->tbPhone->Font = (gcnew System::Drawing::Font(L"Arial", 17, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tbPhone->Location = System::Drawing::Point(156, 311);
 			this->tbPhone->Name = L"tbPhone";
-			this->tbPhone->Size = System::Drawing::Size(400, 30);
-			this->tbPhone->TabIndex = 8;
+			this->tbPhone->Size = System::Drawing::Size(400, 34);
+			this->tbPhone->TabIndex = 5;
 			// 
 			// tbAddress
 			// 
-			this->tbAddress->Location = System::Drawing::Point(156, 407);
+			this->tbAddress->Font = (gcnew System::Drawing::Font(L"Arial", 17, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tbAddress->Location = System::Drawing::Point(156, 368);
 			this->tbAddress->Name = L"tbAddress";
-			this->tbAddress->Size = System::Drawing::Size(400, 30);
-			this->tbAddress->TabIndex = 9;
+			this->tbAddress->Size = System::Drawing::Size(400, 34);
+			this->tbAddress->TabIndex = 6;
 			// 
 			// label6
 			// 
 			this->label6->Font = (gcnew System::Drawing::Font(L"Arial", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label6->Location = System::Drawing::Point(13, 338);
+			this->label6->Location = System::Drawing::Point(13, 299);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(138, 52);
 			this->label6->TabIndex = 10;
@@ -224,7 +236,7 @@ namespace loginregistrationdb {
 			// 
 			this->label7->Font = (gcnew System::Drawing::Font(L"Arial", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label7->Location = System::Drawing::Point(13, 395);
+			this->label7->Location = System::Drawing::Point(13, 356);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(138, 52);
 			this->label7->TabIndex = 11;
@@ -236,7 +248,7 @@ namespace loginregistrationdb {
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 24);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(580, 543);
+			this->ClientSize = System::Drawing::Size(580, 501);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->tbAddress);
@@ -256,7 +268,7 @@ namespace loginregistrationdb {
 				static_cast<System::Byte>(0)));
 			this->Margin = System::Windows::Forms::Padding(6);
 			this->Name = L"RegistrationForm";
-			this->Text = L"Registration Form";
+			this->Text = L"Registration";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

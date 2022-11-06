@@ -1,4 +1,6 @@
 #pragma once
+#include "LoginForm.h"
+#include "RegistrationForm.h"
 
 namespace loginregistrationdb {
 
@@ -37,11 +39,6 @@ namespace loginregistrationdb {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ btnLogin;
 	private: System::Windows::Forms::Button^ btnRegister;
-
-
-	protected:
-
-	protected:
 
 	private:
 		/// <summary>
@@ -108,18 +105,38 @@ namespace loginregistrationdb {
 			this->Controls->Add(this->btnLogin);
 			this->Controls->Add(this->label2);
 			this->Name = L"WelcomeForm";
-			this->Text = L"WelcomeForm";
+			this->Text = L"Welcome!";
 			this->ResumeLayout(false);
-
 		}
 #pragma endregion
 	private: System::Void btnLogin_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->Hide();
+		LoginForm^ loginForm = gcnew LoginForm;
+		loginForm->Show();
+		this->Close();
+
+		//User^ user = loginForm->user;
+
+		//if (user != nullptr)
+		//{
+		//	loginregistrationdb::MainForm mainForm(user);
+		//	Application::Run(% mainForm);
+
+		//}
+		//else
+		//{
+		//	MessageBox::Show("Authentication Canceled", "Program.cpp", MessageBoxButtons::OK);
+		//}
+
 
 	}
 	private: System::Void btnRegister_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-
+		this->Hide();
+		RegistrationForm^ registrationForm = gcnew RegistrationForm;
+		registrationForm->Show();
+		this->Close();
 	}
 	};
 }

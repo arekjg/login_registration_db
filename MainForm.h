@@ -77,7 +77,7 @@ namespace loginregistrationdb {
 				static_cast<System::Byte>(238)));
 			this->lbUserInfo->Location = System::Drawing::Point(12, 117);
 			this->lbUserInfo->Name = L"lbUserInfo";
-			this->lbUserInfo->Size = System::Drawing::Size(135, 53);
+			this->lbUserInfo->Size = System::Drawing::Size(553, 53);
 			this->lbUserInfo->TabIndex = 0;
 			this->lbUserInfo->Text = L"label1";
 			this->lbUserInfo->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -90,7 +90,7 @@ namespace loginregistrationdb {
 			this->Controls->Add(this->lbUserInfo);
 			this->Controls->Add(this->label1);
 			this->Name = L"MainForm";
-			this->Text = L"MainForm";
+			this->Text = L"Main Form";
 			this->ResumeLayout(false);
 
 		}
