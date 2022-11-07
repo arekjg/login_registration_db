@@ -22,8 +22,9 @@ namespace loginregistrationdb {
 			//
 			//TODO: Add the constructor code here
 			//
-
-			lbUserInfo->Text = "ID=" + user->id + ", Name=" + user->name + ", email=" + user->email + ", address=" + user->address;
+			label1->Text = "Welcome " + user->name;
+			lbAddress->Text = "Your address: " + user->address;
+			lbPhone->Text = "Your phone #: " + user->phone;
 		}
 
 	protected:
@@ -38,8 +39,10 @@ namespace loginregistrationdb {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ lbAddress;
+	private: System::Windows::Forms::Label^ lbPhone;
 	protected:
-	private: System::Windows::Forms::Label^ lbUserInfo;
+
 
 	private:
 		/// <summary>
@@ -55,7 +58,8 @@ namespace loginregistrationdb {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->lbUserInfo = (gcnew System::Windows::Forms::Label());
+			this->lbAddress = (gcnew System::Windows::Forms::Label());
+			this->lbPhone = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -68,26 +72,38 @@ namespace loginregistrationdb {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(560, 53);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Welcome to Dashboard";
+			this->label1->Text = L"Welcome <name>";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// lbUserInfo
+			// lbAddress
 			// 
-			this->lbUserInfo->Font = (gcnew System::Drawing::Font(L"Arial", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->lbAddress->Font = (gcnew System::Drawing::Font(L"Arial", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->lbUserInfo->Location = System::Drawing::Point(12, 117);
-			this->lbUserInfo->Name = L"lbUserInfo";
-			this->lbUserInfo->Size = System::Drawing::Size(553, 53);
-			this->lbUserInfo->TabIndex = 0;
-			this->lbUserInfo->Text = L"label1";
-			this->lbUserInfo->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->lbAddress->Location = System::Drawing::Point(12, 117);
+			this->lbAddress->Name = L"lbAddress";
+			this->lbAddress->Size = System::Drawing::Size(553, 53);
+			this->lbAddress->TabIndex = 0;
+			this->lbAddress->Text = L"Your address: <address>";
+			this->lbAddress->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// lbPhone
+			// 
+			this->lbPhone->Font = (gcnew System::Drawing::Font(L"Arial", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->lbPhone->Location = System::Drawing::Point(13, 186);
+			this->lbPhone->Name = L"lbPhone";
+			this->lbPhone->Size = System::Drawing::Size(553, 53);
+			this->lbPhone->TabIndex = 1;
+			this->lbPhone->Text = L"Your phone #: <number>";
+			this->lbPhone->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(577, 370);
-			this->Controls->Add(this->lbUserInfo);
+			this->ClientSize = System::Drawing::Size(577, 293);
+			this->Controls->Add(this->lbPhone);
+			this->Controls->Add(this->lbAddress);
 			this->Controls->Add(this->label1);
 			this->Name = L"MainForm";
 			this->Text = L"Main Form";
