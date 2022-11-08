@@ -275,9 +275,6 @@ namespace loginregistrationdb {
 		}
 #pragma endregion
 
-
-	// EVERYTHING BELOW MUST BE CHANGED
-
 	private: System::Void btnCancel_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 	this->Close();
@@ -289,40 +286,67 @@ namespace loginregistrationdb {
 	{
 		String^ email = this->tbEmail->Text;
 		String^ password = this->tbPassword->Text;
+		String^ confirmPass = this->tbPasswordConfirm->Text;
+		String^ userName = this->tbName->Text;
 
-		if (email->Length == 0 || password->Length == 0)
+		if (email->Length == 0 || password->Length == 0 || confirmPass->Length == 0 || userName->Length == 0)
 		{
-			MessageBox::Show("Please enter email and password", "Email or Password Empty", MessageBoxButtons::OK);
+			MessageBox::Show("One of the following fields is empty: Email, Password, Confirm Password, Name", "Empty Field", MessageBoxButtons::OK);
 			return;
 		}
+		if (password != confirmPass)
+		{
+			MessageBox::Show("Given passwords don't match", "Ivalid password", MessageBoxButtons::OK);
+			return;
+		}
+
+		user = gcnew User;
+		//user->id = 0;
+		user->name = userName;
+		user->email = email;
+		user->phone = this->tbPhone->Text;
+		user->address = this->tbAddress->Text;
+		user->password = password;
 
 		try
 		{
 			String^ connString = "Data Source=.\\TEW_SQLEXPRESS;Initial Catalog=users_data;Integrated Security=True";
-			SqlConnection sqlConn(connString);
-			sqlConn.Open();
+			SqlConnection^ sqlConn = gcnew SqlConnection();
+			//SqlConnection sqlConn(connString);
+			//sqlConn.Open();
+			sqlConn->ConnectionString = connString;
 
-			String^ sqlQuery = "SELECT * FROM users WHERE email=@email AND password=@pwd;";
-			SqlCommand command(sqlQuery, % sqlConn);
-			command.Parameters->AddWithValue("@email", email);
-			command.Parameters->AddWithValue("@pwd", password);
 
-			SqlDataReader^ reader = command.ExecuteReader();
-			if (reader->Read())
-			{
-				user = gcnew User;
-				user->id = reader->GetInt32(0);
-				user->name = reader->GetString(1);
-				user->email = reader->GetString(2);
-				user->phone = reader->GetString(3);
-				user->address = reader->GetString(4);
-				user->password = reader->GetString(5);
-				this->Close();
-			}
-			else
-			{
-				MessageBox::Show("Email or password is incorrect", "Email or Password Error", MessageBoxButtons::OK);
-			}
+			String^ insertQuery = "INSERT INTO dbo.users (name, email, phone, address, password)";
+			insertQuery += " VALUES('" + user->name + "', '" + user->email + "', '" + user->phone + "', '" + user->address + "', '" + user->password + "')";
+
+			//SqlCommand command(insertQuery, % sqlConn);
+			SqlCommand^ cmd = sqlConn->CreateCommand();
+			cmd->CommandText = insertQuery;
+			sqlConn->Open();
+			cmd->ExecuteNonQuery();
+			sqlConn->Close();
+
+			// NEEDS FURTHER TESTING *********
+			// TODO: add another UI form after succesfull registration or simply go back to WelcomeForm
+
+
+			//SqlDataReader^ reader = command.ExecuteReader();
+			//if (reader->Read())
+			//{
+				//user = gcnew User;
+				//user->id = reader->GetInt32(0);
+				//user->name = reader->GetString(1);
+				//user->email = reader->GetString(2);
+				//user->phone = reader->GetString(3);
+				//user->address = reader->GetString(4);
+				//user->password = reader->GetString(5);
+				//this->Close();
+			//}
+			//else
+			//{
+			//	MessageBox::Show("Email or password is incorrect", "Email or Password Error", MessageBoxButtons::OK);
+			//}
 		}
 		catch (Exception^ e)
 		{
