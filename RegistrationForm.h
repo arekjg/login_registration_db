@@ -327,26 +327,20 @@ namespace loginregistrationdb {
 			cmd->ExecuteNonQuery();
 			sqlConn->Close();
 
-			// NEEDS FURTHER TESTING *********
-			// TODO: add another UI form after succesfull registration or simply go back to WelcomeForm
+			MessageBox::Show("Your data was succesfully saved in database. You can log in now", "Registration succesful", MessageBoxButtons::OK);
+
+			// ************ NEEDS FURTHER TESTING *************
+			// TODO: go back to welcome form
 
 
-			//SqlDataReader^ reader = command.ExecuteReader();
-			//if (reader->Read())
-			//{
-				//user = gcnew User;
-				//user->id = reader->GetInt32(0);
-				//user->name = reader->GetString(1);
-				//user->email = reader->GetString(2);
-				//user->phone = reader->GetString(3);
-				//user->address = reader->GetString(4);
-				//user->password = reader->GetString(5);
-				//this->Close();
-			//}
-			//else
-			//{
-			//	MessageBox::Show("Email or password is incorrect", "Email or Password Error", MessageBoxButtons::OK);
-			//}
+			/*
+			this->Hide();
+			WelcomeForm^ welcomeForm = gcnew WelcomeForm;
+			welcomeForm->Show();
+			this->Close();
+			*/
+
+
 		}
 		catch (Exception^ e)
 		{
