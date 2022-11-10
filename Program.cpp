@@ -25,24 +25,3 @@ void main(array<String^>^ args)
 
 
 }
-
-
-/*
-Application::EnableVisualStyles();
-Application::SetCompatibleTextRenderingDefault(false);
-loginregistrationdb::LoginForm loginForm;
-
-loginForm.ShowDialog();
-User^ user = loginForm.user;
-
-if (user != nullptr)
-{
-	loginregistrationdb::MainForm mainForm(user);
-	Application::Run(% mainForm);
-
-}
-else
-{
-	MessageBox::Show("Authentication Canceled", "Program.cpp", MessageBoxButtons::OK);
-}
-*/

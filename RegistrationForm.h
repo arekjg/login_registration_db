@@ -312,15 +312,12 @@ namespace loginregistrationdb {
 		{
 			String^ connString = "Data Source=.\\TEW_SQLEXPRESS;Initial Catalog=users_data;Integrated Security=True";
 			SqlConnection^ sqlConn = gcnew SqlConnection();
-			//SqlConnection sqlConn(connString);
-			//sqlConn.Open();
 			sqlConn->ConnectionString = connString;
 
 
 			String^ insertQuery = "INSERT INTO dbo.users (name, email, phone, address, password)";
 			insertQuery += " VALUES('" + user->name + "', '" + user->email + "', '" + user->phone + "', '" + user->address + "', '" + user->password + "')";
 
-			//SqlCommand command(insertQuery, % sqlConn);
 			SqlCommand^ cmd = sqlConn->CreateCommand();
 			cmd->CommandText = insertQuery;
 			sqlConn->Open();

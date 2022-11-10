@@ -208,13 +208,11 @@ namespace loginregistrationdb {
 				user->phone = reader->GetString(3);
 				user->address = reader->GetString(4);
 				user->password = reader->GetString(5);
-				this->Hide();
 
+				this->Hide();
 				MainForm^ mainForm = gcnew MainForm(user);
 				mainForm->Show();
-
 				this->Close();
-
 			}
 			else
 			{

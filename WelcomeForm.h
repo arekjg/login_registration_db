@@ -116,20 +116,6 @@ namespace loginregistrationdb {
 		loginForm->Show();
 		this->Close();
 
-		//User^ user = loginForm->user;
-
-		//if (user != nullptr)
-		//{
-		//	loginregistrationdb::MainForm mainForm(user);
-		//	Application::Run(% mainForm);
-
-		//}
-		//else
-		//{
-		//	MessageBox::Show("Authentication Canceled", "Program.cpp", MessageBoxButtons::OK);
-		//}
-
-
 	}
 	private: System::Void btnRegister_Click(System::Object^ sender, System::EventArgs^ e)
 	{
