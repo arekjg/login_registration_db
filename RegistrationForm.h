@@ -330,12 +330,10 @@ namespace loginregistrationdb {
 			// TODO: go back to welcome form
 
 
-			/*
-			this->Hide();
-			WelcomeForm^ welcomeForm = gcnew WelcomeForm;
-			welcomeForm->Show();
-			this->Close();
-			*/
+			//
+			//this->Hide();
+			//this->Close();
+			
 
 
 		}

@@ -1,7 +1,4 @@
-#include "LoginForm.h"
-#include "MainForm.h"
 #include "WelcomeForm.h"
-#include "RegistrationForm.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -22,6 +19,4 @@ void main(array<String^>^ args)
 	welcomeForm->FormClosed += gcnew FormClosedEventHandler(&OnFormClosed);
 	welcomeForm->Show();
 	Application::Run();
-
-
 }
