@@ -111,18 +111,13 @@ namespace loginregistrationdb {
 #pragma endregion
 	private: System::Void btnLogin_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		this->Hide();
 		LoginForm^ loginForm = gcnew LoginForm;
 		loginForm->Show();
-		this->Close();
-
 	}
 	private: System::Void btnRegister_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		this->Hide();
 		RegistrationForm^ registrationForm = gcnew RegistrationForm;
 		registrationForm->Show();
-		this->Close();
 	}
 	};
 }

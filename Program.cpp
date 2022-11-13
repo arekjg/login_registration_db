@@ -20,3 +20,5 @@ void main(array<String^>^ args)
 	welcomeForm->Show();
 	Application::Run();
 }
+
+// solution from: https://stackoverflow.com/questions/13272348/closing-a-form-and-opening-another-without-closing-the-application

@@ -170,7 +170,7 @@ namespace loginregistrationdb {
 #pragma endregion
 	private: System::Void btnCancel_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		MessageBox::Show("Authentication Canceled", "Program.cpp", MessageBoxButtons::OK);
+		MessageBox::Show("Authentication Canceled", "Authentication Canceled", MessageBoxButtons::OK);
 		this->Close();
 	}
 

@@ -277,7 +277,8 @@ namespace loginregistrationdb {
 
 	private: System::Void btnCancel_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-	this->Close();
+		MessageBox::Show("Registration Canceled", "Registration Canceled", MessageBoxButtons::OK);
+		this->Close();
 	}
 
 	public: User^ user = nullptr;
@@ -314,7 +315,6 @@ namespace loginregistrationdb {
 			SqlConnection^ sqlConn = gcnew SqlConnection();
 			sqlConn->ConnectionString = connString;
 
-
 			String^ insertQuery = "INSERT INTO dbo.users (name, email, phone, address, password)";
 			insertQuery += " VALUES('" + user->name + "', '" + user->email + "', '" + user->phone + "', '" + user->address + "', '" + user->password + "')";
 
@@ -325,16 +325,6 @@ namespace loginregistrationdb {
 			sqlConn->Close();
 
 			MessageBox::Show("Your data was succesfully saved in database. You can log in now", "Registration succesful", MessageBoxButtons::OK);
-
-			// ************ NEEDS FURTHER TESTING *************
-			// TODO: go back to welcome form
-
-
-			//
-			//this->Hide();
-			//this->Close();
-			
-
 
 		}
 		catch (Exception^ e)
