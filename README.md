@@ -13,5 +13,11 @@ Simple Windows Forms application. It uses database with users' data and checks v
 
 All data is stored in database with 1 table 'users'.  
 Schema of the table:  
-| Id | name | email | phone | address | password |
-|----|------|-------|-------|---------|----------|
+| Column   | Data Type | Size |
+|----------|-----------|------|
+| Id       | int       | 4    |
+| name     | varchar   | 50   |
+| email    | varchar   | 50   |
+| phone    | varchar   | 50   |
+| addres   | varchar   | max  |
+| password | varchar   | max  |
