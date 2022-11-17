@@ -12,4 +12,6 @@ Simple Windows Forms application. It uses database with users' data and checks v
 ![loginForm](images/loginForm.png)  
 
 All data is stored in database with 1 table 'users'.  
-Schema of the table:
+Schema of the table:  
+| Id | name | email | phone | address | password |
+|----|------|-------|-------|---------|----------|
